@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coronanana</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+  <script type="text/javascript" src="index.js"></script>
+  <script src="https://unpkg.com/@jdmichaud/observable@0.5.2/dist/index.umd.js"></script>
+  <script type="text/javascript" src="decorator.js"></script>
+  <script type="text/javascript" src="my-decorators.js"></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="range.css"/>
+
+  <style type="text/css">
+    path {
+      /*fill: #f2f2f2;*/
+      fill: #949494;
+      fill-opacity: 1;
+      stroke: white;
+      stroke-opacity: 1;
+      stroke-width: 1px;
+    }
+
+    html {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      margin: 0px;
+      height: calc(100% - 0.3em);
+      width: 100%;
+    }
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+
+    #map-container {
+      width: 100%;
+      height: 100%;
+      /*border: solid 1px lightgrey;*/
+    }
+
+    #current-date {
+      margin: 10px;
+      font-size: 14px;
+    }
+
+    #control-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #date-slider {
+      width: 100%;
+    }
+
+    #btn-container {
+      display: flex;
+      justify-content: center;
+      /*width: 30%;*/
+      min-width: 200px;
+    }
+
+    #current-date {
+      /*width: 40%;*/
+      min-width: 250px;
+    }
+
+    .btn {
+      width: 20px;
+    }
+
+    .btn i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+
+    <div id="map-container"></div>
+    <div id="control-container">
+      <div id="btn-container">
+        <button class="btn btn-backward"><i class="fas fa-step-backward"></i></button>
+        <button class="btn btn-play"><i class="fas fa-play"></i></button>
+        <button class="btn btn-forward"><i class="fas fa-step-forward"></i></button>
+      </div>
+      <input id="date-slider" type="range">
+      <p id="current-date"></p>
+    </div>
+
+  </div>
+
+</body>
+</html>
